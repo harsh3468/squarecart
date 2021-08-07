@@ -12,7 +12,7 @@ import AuthRoute from './utils/AuthRoute';
 import store from './redux/store/store';
 import NormalRoute from './utils/NormalRoute';
 import Footer from './component/Footer';
-axios.defaults.baseURL = "http://localhost:3001"
+axios.defaults.baseURL = "https://squarecart-api.herokuapp.com"
 const token = localStorage.getItem('token')
 if(token){
   const decodeToken = jwtDecode(token)
