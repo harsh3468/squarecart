@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export class CartProduct extends Component {
     render() {
-        const {price,name,quantity,image_url}=this.props.details
+        const { price, name, quantity, image_url } = this.props.details
         return (
             <div className="cart-product">
                 <div>
@@ -18,7 +18,7 @@ export class CartProduct extends Component {
                     <h5>{quantity}</h5>
                 </div>
                 <div>
-                    <h5>{quantity*price}</h5>
+                    <h5>{quantity * price}</h5>
                 </div>
             </div>
         )

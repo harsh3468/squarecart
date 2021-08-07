@@ -15,6 +15,7 @@ const setAuthorizationHandler = (token,userId) => {
 }
 
 export const signupUser = (newUserData,history)=>(dispatch)=>{
+    delete newUserData.confirmPassword
     axios.post('/user/signup',newUserData).then(res=>{
         history.push('/login')
     }).catch(err=>{

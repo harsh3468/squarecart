@@ -4,6 +4,9 @@ import {signupUser} from '../redux/actions/userAction'
 
 export class signup extends Component {
     state={
+        firstName:"",
+        lastName:"",
+        phoneNumber:"",
         email:"",
         password:"",
         confirmPassword:""
@@ -11,8 +14,8 @@ export class signup extends Component {
     handleChange=(event)=>{
         this.setState({[event.target.name]:event.target.value})
     }
-    handleSubmit=()=>{
-        console.log(this.state)
+    handleSubmit=(event)=>{
+        event.preventDefault()
         this.props.signupUser(this.state,this.props.history)
     }
     
@@ -21,10 +24,16 @@ export class signup extends Component {
             <div className="signup-section">
                 <div className="signup-form">
                     <h1>sign up</h1>
-                    <input name="email" onChange={this.handleChange} placeholder="email"></input>
-                    <input name="password" onChange={this.handleChange}  placeholder="password"></input>
-                    <input name="confirmPassword"onChange={this.handleChange}  placeholder="confirm password"></input>
-                    <button onClick={this.handleSubmit}>create</button>
+                    <form onSubmit={this.handleSubmit} >
+                    <input name="firstName" type="text" onChange={this.handleChange} placeholder="first name"></input>
+                    <input name="lastName" type="text" onChange={this.handleChange}  placeholder="last name"></input>
+                    <input name="phoneNumber"  minLength="10" maxLength="10" onChange={this.handleChange}  placeholder="phone number"></input>
+                    <input name="email" type="email" onChange={this.handleChange} placeholder="email"></input>
+                    <input name="password" type="password" minLength="8" onChange={this.handleChange}  placeholder="password"></input>
+                    <input name="confirmPassword" type="password" minLength="8"onChange={this.handleChange}  placeholder="confirm password"></input>
+                    <button type="submit">create</button>
+                    </form>
+                    <p>existing user <a href="/login">click here</a> to login</p>
                 </div>
             </div>
         )

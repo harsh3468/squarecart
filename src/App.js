@@ -1,3 +1,4 @@
+import React,{useEffect} from 'react';
 import {BrowserRouter,Route,Switch} from 'react-router-dom'
 import NavBar from './component/NavBar';
 import login from './pages/login';
@@ -10,7 +11,8 @@ import jwtDecode from 'jwt-decode'
 import AuthRoute from './utils/AuthRoute';
 import store from './redux/store/store';
 import NormalRoute from './utils/NormalRoute';
-axios.defaults.baseURL = "https://squarecart-api.herokuapp.com"
+import Footer from './component/Footer';
+axios.defaults.baseURL = "http://localhost:3001"
 const token = localStorage.getItem('token')
 if(token){
   const decodeToken = jwtDecode(token)
@@ -33,6 +35,7 @@ function App() {
           <NormalRoute exact component={Cart} path="/cart"></NormalRoute>
           <NormalRoute exact component={OrderPlaced} path="/placed/:id"></NormalRoute>
         </Switch>
+        <Footer/>
       </BrowserRouter>
     </div>
   );

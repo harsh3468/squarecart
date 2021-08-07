@@ -10,7 +10,7 @@ export class OrderPlaced extends Component {
                     <p>Order id : {this.props.match.params.id}</p>
                     <p>Thanku for shopping from squarecart</p>
                     <div className="order-placed-button">
-                    <a href="/" >continue shopping</a>
+                        <a href="/" >continue shopping</a>
                     </div>
                 </div>
             </div>

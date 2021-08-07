@@ -4,12 +4,13 @@ import {loginUser} from '../redux/actions/userAction'
 class login extends React.Component {
     state={
         email:"",
-        password:""
+        password:"",
     }
     handleChange=(event)=>{
         this.setState({[event.target.name]:event.target.value})
     }
-    handleSubmit=()=>{
+    handleSubmit=(event)=>{
+        event.preventDefault()
         this.props.loginUser(this.state,this.props.history)
     }
     render() {
@@ -17,9 +18,12 @@ class login extends React.Component {
             <div className="login-section">
                 <div className="login-form">
                     <h1>login</h1>
-                    <input name="email" onChange={this.handleChange} placeholder="email"></input>
-                    <input name="password" onChange={this.handleChange} placeholder="password"></input>
-                    <button onClick={this.handleSubmit}>login</button>
+                    <form onSubmit={this.handleSubmit}>
+                        <input name="email" type="email" required onChange={this.handleChange} placeholder="email"></input>
+                        <input name="password" type="password" minLength="8" required onChange={this.handleChange} placeholder="password"></input>
+                        <button type="submit">login</button>
+                    </form>
+                    <p>new user <a href="/signup">click here</a> to signup</p>
                 </div>
             </div>
         )

@@ -4,7 +4,8 @@ import { generateNewOrder } from '../redux/actions/dataAction'
 import CartProduct from './CartProduct'
 export class Cart extends Component {
     handleOrder = (order) => {
-        this.props.generateNewOrder(order, this.props.history)
+        if(order.length)
+            this.props.generateNewOrder(order, this.props.history)
     }
     render() {
         const { cart } = this.props
@@ -35,7 +36,7 @@ export class Cart extends Component {
                             Tax : {totalAmount * 0.18}
                         </h5>
                         <h5>Total Pay: {(totalAmount + (totalAmount * 0.18)).toFixed(2)}</h5>
-                        <button onClick={() => this.handleOrder({...cart,total_amount:(totalAmount + (totalAmount * 0.18)).toFixed(2)})}>Checkout</button>
+                        <button onClick={() => this.handleOrder({ orderMap:cart, total_amount: (totalAmount + (totalAmount * 0.18)).toFixed(2) })}>Checkout</button>
                     </div>
 
                 </div>

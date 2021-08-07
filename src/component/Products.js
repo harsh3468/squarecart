@@ -38,8 +38,14 @@ export class Products extends Component {
                     </div>
                 </div>
                 <div className="description-section">
-                    <a href="/">read more</a>
-                    {quantity ?<button onClick={auth?() => this.addToCart(this.props.details):window.location.href="/login"} className="add-to-cart">Add</button> : ''}
+                    <button id="myBtn">Open Modal</button>
+                    <div id="myModal" className="modal">
+                        <div className="modal-content">
+                            <span className="close">&times;</span>
+                            <p>Some text in the Modal..</p>
+                        </div>
+                    </div>
+                    {quantity ? <button onClick={auth ? () => this.addToCart(this.props.details) : window.location.href = "/login"} className="add-to-cart">Add</button> : ''}
                 </div>
             </div>
         )
