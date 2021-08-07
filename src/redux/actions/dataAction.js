@@ -3,7 +3,7 @@ export const getAllProducts = ()=>(dispatch)=>{
     axios.get('/products').then(res=>{
         dispatch({type:'SET_PRODUCTS',payload:res.data})
     }).catch(err=>{
-        console.log(err)
+        dispatch({type:'SET_ERROR',payload:err.res.data})
     })
 }
 export const generateNewOrder = (orderDetail,history)=>(dispatch)=>{
@@ -11,7 +11,7 @@ export const generateNewOrder = (orderDetail,history)=>(dispatch)=>{
         history.push(`/placed/${res.data}`)
         sessionStorage.clear()
     }).catch(err=>{
-        console.log(err)
+        dispatch({type:'SET_ERROR',payload:err.res.data})
     })
 }
 export const addTOCart = (cartData)=>(dispatch)=>{

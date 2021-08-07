@@ -5,7 +5,7 @@ export const loginUser = (userData, history) => (dispatch) => {
         dispatch({type:'SET_AUTH'})
         history.push('/')
     }).catch(err => {
-        console.log(err)
+        dispatch({type:'SET_ERROR',payload:err.response.data.error})
     })
 }
 const setAuthorizationHandler = (token,userId) => {
@@ -19,10 +19,10 @@ export const signupUser = (newUserData,history)=>(dispatch)=>{
     axios.post('/user/signup',newUserData).then(res=>{
         history.push('/login')
     }).catch(err=>{
-        console.log(err)
+        dispatch({type:'SET_ERROR',payload:err.response.data.error})
     })
 }
-export const logoutUser =(history)=>(dispatch)=>{
+export const logoutUser =()=>(dispatch)=>{
     localStorage.clear()
     delete axios.defaults.headers.common['Authorization']
     dispatch({type:'SET_AUTH'})

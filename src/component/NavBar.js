@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { logoutUser } from '../redux/actions/userAction'
-
 export class NavBar extends Component {
     handleLogout = () => {
         this.props.logoutUser(this.props.history);

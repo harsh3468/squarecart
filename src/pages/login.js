@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import Error from '../component/Error'
 import {loginUser} from '../redux/actions/userAction'
 class login extends React.Component {
     state={
@@ -24,6 +25,7 @@ class login extends React.Component {
                         <button type="submit">login</button>
                     </form>
                     <p>new user <a href="/signup">click here</a> to signup</p>
+                    <Error/>
                 </div>
             </div>
         )
