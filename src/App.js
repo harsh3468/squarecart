@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
-
+import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import NavBar from './component/NavBar';
+import login from './pages/login';
+import signup from './pages/signup'
+import Home from './component/Home';
+import Cart from './component/Cart';
+import OrderPlaced from './component/OrderPlaced';
+import axios from 'axios';
+import jwtDecode from 'jwt-decode'
+import AuthRoute from './utils/AuthRoute';
+import store from './redux/store/store';
+import NormalRoute from './utils/NormalRoute';
+axios.defaults.baseURL = "http://localhost:3001"
+const token = localStorage.getItem('token')
+if(token){
+  const decodeToken = jwtDecode(token)
+  if(decodeToken.exp * 1000 < Date.now()){
+    window.location.href = '/login'
+  }else{
+    store.dispatch({type:"SET_AUTH",payload:true})
+    axios.defaults.headers.common['Authorization'] = token
+  }
+} 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <BrowserRouter>
+        <NavBar/>
+        <Switch>
+          <Route exact component={Home} path="/"></Route>
+          <AuthRoute exact component={login} path="/login"></AuthRoute>
+          <AuthRoute exact component={signup} path="/signup"></AuthRoute>
+          <NormalRoute exact component={Cart} path="/cart"></NormalRoute>
+          <NormalRoute exact component={OrderPlaced} path="/placed/:id"></NormalRoute>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

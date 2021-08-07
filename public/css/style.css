@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    cursor: pointer;
+  }
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+::-webkit-scrollbar-thumb {
+    background-color: rgb(183, 126, 236);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(133, 4, 253);
+}
+.app-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: blueviolet;
+    align-items: center; 
+}
+.app-header img{
+    width: 210px;
+    height: 75px;
+    margin: 4px;
+    color: blueviolet;
+}
+.app-header-nav {
+    margin-right: 15px;
+}
+.app-header-nav a{
+    border: none;
+    color: #ffff;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 15px;
+    padding: 5px;
+    cursor: pointer;
+    transition: ease-out .5s;
+}
+/* login section */
+.login-section{
+    display: flex;
+    justify-content: center;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:50px ;
+    box-shadow: 1px 1px 5px 1px rgb(0,0,0,.5);
+    border-radius: 10px;
+    padding: 40px 70px;
+    transition: ease-out .5s;
+}
+.login-form:hover{
+    box-shadow: 1px 1px 10px 1px rgb(0,0,0,.5);
+}
+.login-form input{
+    margin-bottom: 1.5rem;
+    width:20rem;
+    height:3rem;
+    font-size: larger;
+    padding-left:8px;
+    border:1px solid lightgray;
+    border-radius: 10px;
+}
+.login-form input:focus{
+    outline:none;
+    border-radius: 10px;
+    border:1px solid blueviolet ;
+}
+.login-form button{
+    width:7rem;
+    height:3rem;
+    background-color: blueviolet;
+    color: #ffff;
+    border: none;
+    border-radius: 15px;
+    font-size: large;
+    cursor: pointer;
+    transition: ease-out .5s;
+}
+.login-form button:hover{
+    box-shadow: 1px 1px 5px 1px rgb(0,0,0,.5);
+}
+.login-form h1{
+    font-size: 45px;
+    font-weight:600;
+    text-transform: capitalize;
+}
+
+
+/* signup section */
+.signup-section{
+    display: flex;
+    justify-content: center;
+}
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:50px ;
+    box-shadow: 1px 1px 5px 1px rgb(0,0,0,.5);
+    border-radius: 10px;
+    padding: 40px 70px;
+    transition: ease-out .5s;
+}
+.signup-form:hover{
+    box-shadow: 1px 1px 10px 1px rgb(0,0,0,.5);
+}
+.signup-form input{
+    margin-bottom: 1.5rem;
+    width:20rem;
+    height:3rem;
+    font-size: larger;
+    padding-left:8px;
+    border:1px solid lightgray;
+    border-radius: 10px;
+}
+.signup-form input:focus{
+    outline:none;
+    border-radius: 10px;
+    border:1px solid blueviolet ;
+}
+.signup-form button{
+    width:7rem;
+    height:3rem;
+    background-color: blueviolet;
+    color: #ffff;
+    border: none;
+    border-radius: 15px;
+    font-size: large;
+    cursor: pointer;
+    transition: ease-out .5s;
+}
+.signup-form button:hover{
+    box-shadow: 1px 1px 5px 1px rgb(0,0,0,.5);
+}
+.signup-form h1{
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/*home section*/
+
+.product-title h2{
+    margin-left: 20px;
+    font-weight: 600;
+}
+.product-section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card-item{
+    margin:10px 10px 0 10px;
+    box-shadow: 1px 1px 5px 2px rgb(0,0,0,0.5);
+}
+.card-item img{
+    width: 180px;
+    padding: 30px;
+}
+.card-item h4{
+    font-weight: 400;
+    font-size: 18px;
+    margin-left:10px ;
+}
+.card-item h5{
+    font-weight: 400;
+    font-size: 15px;
+    margin-left:10px ;
+}
+.card-item p{
+    font-weight: 300;
+    font-size: 20px;
+    margin-left:10px ;
+}
+.add-btn-section{
+    display: flex;
+    justify-content: space-between;
+    margin-right:10px;
+}
+.product-count{
+    padding: 0px 5px;
+}
+.add-btn-section i{
+    background-color: blueviolet;
+    color: #ffff;
+    font-weight: 100;
+    padding: 7px;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px 1px rgb(0,0,0,.5);
+    transition: ease-out ;
+}
+.add-btn-section i:hover{
+    box-shadow: 1px 1px 1px 1px rgb(0,0,0,.5);
+}
+
+/*cart section*/
+.user-cart{
+    display:flex;
+    justify-content:center;
+}
+.cart-product{
+    display: flex; 
+    align-items: center;
+    justify-content: space-evenly;
+}
+.cart-product img{
+    width: 120px;
+}
+.proceed-cart{
+    box-sizing: border-box;
+    background-color: slateblue;
+    padding:60px;
+    font-size:20px;
+}
+.proceed-cart h5{
+    color: #ffff;
+    font-weight: 400;
+}
+.proceed-cart button{
+    width:6rem;
+    height:2rem;
+    background-color: #ffff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.cart-product h5{
+    font-weight: 400;
+    margin:5px;
+}
+.cart-section h4{
+    margin-left:20px ;
+    font-weight: 600;
+    font-size: 25px;
+}
+.cart-items{
+    max-height:400px;
+    overflow-y: scroll;
+    width: 40%;
+}
+.add-to-cart{
+    background-color: blueviolet;
+    color: #ffff;
+    font-weight: 100;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px 1px rgb(0,0,0,.5);
+    transition: ease-out ;
+    border: none;
+    margin-right: 10px;
+}
+.add-to-cart:hover{
+    box-shadow: 1px 1px 1px 1px rgb(0,0,0,.5);
+}
+.description-section{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.cart-head h5{
+    font-size: medium;
+    font-weight: 500;
+}
+.empty-div{
+    display: block;
+    padding: 20px;
+    width: 120px;
+}
+.description-section a{
+
+}
+
+/* order placed section */
+.order-placed-section{
+    display: flex;
+    justify-content: center;
+}
+.order-placed-message{
+    box-shadow: 1px 2px 10px 3px rgb(0,0,0,0.5);
+    margin-top:30px;
+    padding: 8px 50px;
+}
+.order-placed-message h3{   
+    text-align: center  ;
+    font-size: xx-large;
+    color: grey;
+}
+.order-placed-message p{
+    text-align: center;
+}
+.order-placed-button a{
+    font-weight: 500;
+    font-size: large;
+    color: slateblue;
+}
+.order-placed-button{
+    display: flex;
+    justify-content: center;
+}
+
