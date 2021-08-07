@@ -17,7 +17,6 @@ export class Cart extends Component {
             <div className="cart-section">
                 <h4>Your Cart</h4>
                 <div className="user-cart" >
-
                     <div className="cart-items">
                         <div className="cart-product">
                             <div className="empty-div">

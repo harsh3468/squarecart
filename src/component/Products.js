@@ -37,8 +37,11 @@ export class Products extends Component {
                         <i onClick={this.handleSubtract} className="fas fa-minus"></i><span className="product-count">{this.state.quantity}</span><i onClick={this.handleAdd} className="fas fa-plus"></i>
                     </div>
                 </div>
-                <div className="description-section">
+                <div className="add-new-item-btn">
                     {quantity ? <button onClick={auth ? () => this.addToCart(this.props.details) : window.location.href = "/login"} className="add-to-cart">Add</button> : ''}
+                </div>
+                <div className="description-section">
+                    {description}
                 </div>
             </div>
         )

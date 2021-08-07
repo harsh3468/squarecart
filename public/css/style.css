@@ -47,21 +47,11 @@
     cursor: pointer;
     transition: ease-out .5s;
 }
-/* footer section */
-.app-footer{
-    background-color: blueviolet;
-    position: relative;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
-
 
 /* login section */
 .login-section{
     display: flex;
     justify-content: center;
-    min-height: 85vh;
 }
 .login-form{
     margin:100px 0px 50px 0px ;
@@ -174,7 +164,6 @@
 
 /*home section*/
 .home-section{
-    min-height: 85vh;
     padding-top: 80px;
 }
 .product-title{
@@ -240,7 +229,7 @@
 
 /*cart section*/
 .cart-section{
-    min-height: 85vh;
+    margin-top: 100px;
 }
 .user-cart{
     display:flex;
@@ -300,9 +289,9 @@
 .add-to-cart:hover{
     box-shadow: 1px 1px 1px 1px rgb(0,0,0,.5);
 }
-.description-section{
+.add-new-item-btn{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 10px;
 }
 .cart-head h5{
@@ -313,9 +302,6 @@
     display: block;
     padding: 20px;
     width: 120px;
-}
-.description-section a{
-
 }
 
 /* order placed section */
@@ -347,7 +333,13 @@
     display: flex;
     justify-content: center;
 }
-/* error message */
-.error-message{
+/*description section*/
+.description-section{
+    display: block;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
     
 }

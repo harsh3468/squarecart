@@ -11,8 +11,6 @@ import jwtDecode from 'jwt-decode'
 import AuthRoute from './utils/AuthRoute';
 import store from './redux/store/store';
 import NormalRoute from './utils/NormalRoute';
-import Footer from './component/Footer';
-import Error from '../src/component/Error'
 
 axios.defaults.baseURL = "https://squarecart-api.herokuapp.com"
 const token = localStorage.getItem('token')
@@ -37,7 +35,6 @@ function App() {
           <NormalRoute exact component={Cart} path="/cart"></NormalRoute>
           <NormalRoute exact component={OrderPlaced} path="/placed/:id"></NormalRoute>
         </Switch>
-        <Footer/>
       </BrowserRouter>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import Error from '../component/Error'
 import {signupUser} from '../redux/actions/userAction'
 
 export class signup extends Component {
@@ -30,10 +31,10 @@ export class signup extends Component {
                     <input name="phoneNumber"  minLength="10" maxLength="10" onChange={this.handleChange}  placeholder="phone number"></input>
                     <input name="email" type="email" onChange={this.handleChange} placeholder="email"></input>
                     <input name="password" type="password" minLength="8" onChange={this.handleChange}  placeholder="password"></input>
-                    <input name="confirmPassword" type="password" minLength="8"onChange={this.handleChange}  placeholder="confirm password"></input>
                     <button type="submit">create</button>
                     </form>
                     <p>existing user <a href="/login">click here</a> to login</p>
+                    <Error/>
                 </div>
             </div>
         )

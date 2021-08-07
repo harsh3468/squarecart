@@ -26,6 +26,7 @@ class login extends React.Component {
                     </form>
                     <p>new user <a href="/signup">click here</a> to signup</p>
                     <Error/>
+
                 </div>
             </div>
         )
